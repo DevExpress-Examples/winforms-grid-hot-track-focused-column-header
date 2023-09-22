@@ -3,16 +3,31 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E342)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WinForms Data Grid - Highlight the focused column header
+
+This example handles the [CustomDrawColumnHeader](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.CustomDrawColumnHeader) event to apply the hottrack state for the focused column.
+
+The example also handles [FocusedColumnChanged](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Base.ColumnView.FocusedColumnChanged) and [Layout](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Base.BaseView.Layout) events to call the [InvalidateColumnHeader](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.InvalidateColumnHeader(DevExpress.XtraGrid.Columns.GridColumn)) mehthod to forcibly repaint column headers when the focused column or the GridView's layout is changed.
+
+![WinForms Data Grid - Highlight the focused column header](https://raw.githubusercontent.com/DevExpress-Examples/how-to-hot-track-a-focused-column-e342/13.1.4%2B/media/winforms-grid-highlight-focused-column-header.png)
+
+```csharp
+private void gridView1_CustomDrawColumnHeader(object sender, ColumnHeaderCustomDrawEventArgs e) {
+    GridView view = sender as GridView;
+    if (e.Column?.FieldName == view.FocusedColumn.FieldName)
+        e.Info.State = ObjectState.Hot;
+}
+private void gridView1_FocusedColumnChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventArgs e) {
+    ((GridView)sender).InvalidateColumnHeader(e.FocusedColumn);
+    ((GridView)sender).InvalidateColumnHeader(e.PrevFocusedColumn);
+}
+private void gridView1_Layout(object sender, EventArgs e) {
+    ((GridView)sender).InvalidateColumnHeader(null);
+}
+```
+
+
+## Files to Review
 
 * [Form1.cs](./CS/WindowsApplication1/Form1.cs) (VB: [Form1.vb](./VB/WindowsApplication1/Form1.vb))
-<!-- default file list end -->
-# How to hot track a focused column
-
-
-<p>You should handle the <strong>GridView.CustomDrawColumnHeader</strong> event. In this event handler, change the ColumnHeaderCustomDrawEventArgs.Info.State property to ObjectState.Hot for the focused column.</p><p>When the focused column is changed and the GridView layout is changed, the column headers need to be forced to repaint. You should use the <strong>FocusedColumnChanged</strong> and <strong>GridView.Layout</strong>event and <strong>InvalidateColumnHeader</strong> method for this.</p>
-
-<br/>
-
-
