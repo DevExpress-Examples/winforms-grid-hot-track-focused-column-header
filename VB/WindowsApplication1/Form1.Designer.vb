@@ -1,5 +1,7 @@
-﻿Namespace WindowsApplication1
-    Partial Public Class Form1
+Namespace WindowsApplication1
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -35,36 +37,39 @@
             Me.repositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
             Me.repositoryItemTimeEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit()
             Me.repositoryItemDateEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit()
-            CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.repositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.repositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.repositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.repositoryItemTimeEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.repositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.repositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.gridControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.gridView1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.repositoryItemComboBox1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.repositoryItemTextEdit1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.repositoryItemCheckEdit1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.repositoryItemTimeEdit1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.repositoryItemDateEdit1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.repositoryItemDateEdit1.CalendarTimeProperties), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' gridControl1
             ' 
             Me.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.gridControl1.EmbeddedNavigator.CustomButtons.AddRange(New DevExpress.XtraEditors.NavigatorCustomButton() { New DevExpress.XtraEditors.NavigatorCustomButton(-1, -1, True, True, "", "CustomEdit")})
+            Me.gridControl1.EmbeddedNavigator.CustomButtons.AddRange(New DevExpress.XtraEditors.NavigatorCustomButton() {New DevExpress.XtraEditors.NavigatorCustomButton(-1, -1, True, True, "", "CustomEdit")})
             Me.gridControl1.Location = New System.Drawing.Point(0, 0)
             Me.gridControl1.MainView = Me.gridView1
             Me.gridControl1.Name = "gridControl1"
-            Me.gridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() { Me.repositoryItemTextEdit1, Me.repositoryItemCheckEdit1, Me.repositoryItemTimeEdit1, Me.repositoryItemDateEdit1, Me.repositoryItemComboBox1})
+            Me.gridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.repositoryItemTextEdit1, Me.repositoryItemCheckEdit1, Me.repositoryItemTimeEdit1, Me.repositoryItemDateEdit1, Me.repositoryItemComboBox1})
             Me.gridControl1.Size = New System.Drawing.Size(592, 358)
             Me.gridControl1.TabIndex = 0
             Me.gridControl1.UseEmbeddedNavigator = True
-            Me.gridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.gridView1})
+            Me.gridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView1})
             ' 
             ' gridView1
             ' 
-            Me.gridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() { Me.colBoolProperty, Me.colStringProperty, Me.colCurrentDate, Me.colIntProperty})
+            Me.gridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colBoolProperty, Me.colStringProperty, Me.colCurrentDate, Me.colIntProperty})
             Me.gridView1.GridControl = Me.gridControl1
             Me.gridView1.Name = "gridView1"
             Me.gridView1.OptionsNavigation.EnterMoveNextColumn = True
             Me.gridView1.OptionsSelection.MultiSelect = True
+            AddHandler Me.gridView1.CustomDrawColumnHeader, New DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventHandler(AddressOf Me.gridView1_CustomDrawColumnHeader)
+            AddHandler Me.gridView1.FocusedColumnChanged, New DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventHandler(AddressOf Me.gridView1_FocusedColumnChanged)
+            AddHandler Me.gridView1.Layout, New System.EventHandler(AddressOf Me.gridView1_Layout)
             ' 
             ' colBoolProperty
             ' 
@@ -102,8 +107,8 @@
             ' repositoryItemComboBox1
             ' 
             Me.repositoryItemComboBox1.AutoHeight = False
-            Me.repositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-            Me.repositoryItemComboBox1.Items.AddRange(New Object() { "1", "2", "3", "4", "5"})
+            Me.repositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.repositoryItemComboBox1.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
             Me.repositoryItemComboBox1.Name = "repositoryItemComboBox1"
             Me.repositoryItemComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
             ' 
@@ -120,14 +125,14 @@
             ' repositoryItemTimeEdit1
             ' 
             Me.repositoryItemTimeEdit1.AutoHeight = False
-            Me.repositoryItemTimeEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton()})
+            Me.repositoryItemTimeEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
             Me.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1"
             ' 
             ' repositoryItemDateEdit1
             ' 
             Me.repositoryItemDateEdit1.AutoHeight = False
-            Me.repositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-            Me.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() { New DevExpress.XtraEditors.Controls.EditorButton()})
+            Me.repositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+            Me.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
             Me.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1"
             ' 
             ' Form1
@@ -138,31 +143,39 @@
             Me.Controls.Add(Me.gridControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.repositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.repositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.repositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.repositoryItemTimeEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.repositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.repositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.Form1_Load)
+            CType((Me.gridControl1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.gridView1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.repositoryItemComboBox1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.repositoryItemTextEdit1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.repositoryItemCheckEdit1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.repositoryItemTimeEdit1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.repositoryItemDateEdit1.CalendarTimeProperties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.repositoryItemDateEdit1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+#End Region
         Private gridControl1 As DevExpress.XtraGrid.GridControl
-        Private WithEvents gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+
+        Private gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+
         Private repositoryItemTextEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+
         Private repositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+
         Private repositoryItemTimeEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit
+
         Private repositoryItemDateEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+
         Private colBoolProperty As DevExpress.XtraGrid.Columns.GridColumn
+
         Private colStringProperty As DevExpress.XtraGrid.Columns.GridColumn
+
         Private colCurrentDate As DevExpress.XtraGrid.Columns.GridColumn
+
         Private colIntProperty As DevExpress.XtraGrid.Columns.GridColumn
+
         Private repositoryItemComboBox1 As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     End Class
 End Namespace
-
