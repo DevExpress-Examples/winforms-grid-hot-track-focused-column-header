@@ -6,7 +6,7 @@
 
 # WinForms Data Grid - Highlight the focused column header
 
-This example handles the [CustomDrawColumnHeader](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.CustomDrawColumnHeader) event to apply hot-track state for the focused column.
+This example handles the [CustomDrawColumnHeader](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.CustomDrawColumnHeader) event to apply a hot-track state for the focused column.
 
 The example also handles [FocusedColumnChanged](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Base.ColumnView.FocusedColumnChanged) and [Layout](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Base.BaseView.Layout) events to call the [InvalidateColumnHeader](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.InvalidateColumnHeader(DevExpress.XtraGrid.Columns.GridColumn)) mehthod to forcibly repaint column headers when the focused column or the GridView's layout is changed.
 
