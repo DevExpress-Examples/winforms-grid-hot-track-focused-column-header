@@ -11,7 +11,7 @@ This example handles the [CustomDrawColumnHeader](https://docs.devexpress.com/Wi
 
 The example also handles [FocusedColumnChanged](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Base.ColumnView.FocusedColumnChanged) and [Layout](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Base.BaseView.Layout) events to call the [InvalidateColumnHeader](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Views.Grid.GridView.InvalidateColumnHeader(DevExpress.XtraGrid.Columns.GridColumn)) mehthod to forcibly repaint column headers when the focused column or the GridView's layout is changed.
 
-![WinForms Data Grid - Highlight the focused column header](https://raw.githubusercontent.com/DevExpress-Examples/how-to-hot-track-a-focused-column-e342/13.1.4%2B/media/winforms-grid-highlight-focused-column-header.png)
+![WinForms Data Grid - Highlight the focused column header](media/winforms-grid-highlight-focused-column-header.png)
 
 ```csharp
 private void gridView1_CustomDrawColumnHeader(object sender, ColumnHeaderCustomDrawEventArgs e) {
@@ -39,3 +39,4 @@ private void gridView1_Layout(object sender, EventArgs e) {
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
